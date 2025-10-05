@@ -43,14 +43,14 @@ au FocusGained,BufEnter * silent! checktime
 
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
-let mapleader = ","
+let g:mapleader = " "
 
 " Fast saving
-nmap <leader>w :w!<cr>
+nmap <leader>w :w<cr>
 
 " :W sudo saves the file
 " (useful for handling the permission-denied error)
-command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
+"command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -208,8 +208,8 @@ vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 " => Moving around, tabs, windows and buffers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
-map <space> /
-map <C-space> ?
+"map <space> /
+"map <C-space> ?
 
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><cr> :noh<cr>
@@ -219,6 +219,11 @@ map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
+
+tmap <C-j> <C-W>j
+tmap <C-k> <C-W>k
+tmap <C-h> <C-W>h
+tmap <C-l> <C-W>l
 
 " Close the current buffer
 map <leader>bd :Bclose<cr>:tabclose<cr>gT
